@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Hero from "./component/Hero";
 
 export default function Home() {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center p-8">
-      This is home page
+    <div>
+      <Hero />
     </div>
   );
 }
