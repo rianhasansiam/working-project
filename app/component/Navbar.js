@@ -191,7 +191,7 @@ const Navbar = () => {
                 Login
               </button>
               <button 
-                className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-2 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200"
+                className="w-full bg-gradient-to-r from-purple-600 to-purple-900 text-white py-2 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Get Started
