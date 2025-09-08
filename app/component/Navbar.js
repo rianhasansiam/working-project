@@ -3,11 +3,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [isProductsMenuOpen, setIsProductsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const router = useRouter();
+
+
 
   const isActive = (path) => pathname === path;
 
@@ -112,10 +117,10 @@ const Navbar = () => {
 
           {/* Right side actions */}
           <div className="hidden lg:flex lg:items-center lg:space-x-4">
-            <button className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
+            <button onClick={() => router.push('/login')} className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
               Login
             </button>
-            <button className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105">
+            <button onClick={() => router.push('/signup')} className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105">
               Get Started
             </button>
           </div>
@@ -186,13 +191,19 @@ const Navbar = () => {
             <div className="border-t border-gray-200 pt-2 space-y-2 px-3">
               <button 
                 className="w-full text-left py-2 text-gray-700 hover:text-purple-600 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  router.push('/login');
+                }}
               >
                 Login
               </button>
               <button 
                 className="w-full bg-gradient-to-r from-purple-600 to-purple-900 text-white py-2 rounded-lg font-medium hover:from-purple-700 hover:to-purple-800 transition-all duration-200"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  router.push('/signup');
+                }}
               >
                 Get Started
               </button>
