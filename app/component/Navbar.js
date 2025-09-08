@@ -22,17 +22,17 @@ const Navbar = () => {
   const productSubMenu = [
     { 
       name: 'AI Mock Interview', 
-      path: '/products/ai-mock-interview',
+      path: '/interviewTest',
       description: 'Practice with AI interviewer'
     },
     { 
       name: 'Written Tests', 
-      path: '/products/written-tests',
+      path: '/writtenTest',
       description: 'Coding & aptitude tests'
     },
     { 
       name: 'CV Compatibility Test', 
-      path: '/products/cv-scanner',
+      path: '/cvCompatibility',
       description: 'Match CV to job description'
     },
   
